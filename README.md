@@ -1,6 +1,15 @@
 # roman-cli
 roman numeral calculator
 
+# Setup
+Ensure you have node 8.x.x or higher.
+
+Run `npm install` in the root directory.
+
+After that just run `node index.js <math goes here>` and you are good to go!
+
+# Description
+
 This application expects a string of roman numerals in postfix notation.
 Input should look something like this:
 
