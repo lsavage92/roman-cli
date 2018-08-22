@@ -12,10 +12,11 @@ const arithmeticOperators = {
 };
 
 /**
- * This function will parse the users input and return a tuple containing a 
- * stack for the numbers and a stack for arithmetic operators.
+ * This function will parse the users input and return an array of
+ * the input with parsed roman numeral values.
  *
- * @param {string} expr 
+ * @param {array} expr 
+ * @returns {array}
  */
 module.exports = function(expr) {
   return expr.map((part) => {
@@ -26,8 +27,12 @@ module.exports = function(expr) {
        * If we end up with an odd part that is not a numeral, or some
        * user input error, the library should throw an error.
        */
+      
+      console.log(part);
       let num = toArabic(part.toUpperCase());
       return num;
     }
   });
 };
+
+module.exports.arithmeticOperators = arithmeticOperators;
