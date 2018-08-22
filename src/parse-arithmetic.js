@@ -1,11 +1,33 @@
 const toArabic = require('roman-numerals').toArabic;
 
 /**
+ * A map of available arithmetic operations. A map was used for constant
+ * time lookup instead of iterating on an array.
+ */
+const arithmeticOperators = {
+  '+': true,
+  '-': true,
+  '*': true,
+  '/': true
+};
+
+/**
  * This function will parse the users input and return a tuple containing a 
  * stack for the numbers and a stack for arithmetic operators.
  *
  * @param {string} expr 
  */
 module.exports = function(expr) {
-  return [['numbers'], ['operators']];
+  return expr.map((part) => {
+    if (arithmeticOperators[part]) {
+      return part;
+    } else {
+      /**
+       * If we end up with an odd part that is not a numeral, or some
+       * user input error, the library should throw an error.
+       */
+      let num = toArabic(part.toUpperCase());
+      return num;
+    }
+  });
 };

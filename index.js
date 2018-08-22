@@ -1,16 +1,15 @@
 /**
- * This application expects a string of roman numerals in a lisp-like postfix notation.
- * It will calculate from the innermost parenthesis outwards. Input should look something like this:
+ * This application expects a series of roman numerals in postfix notation.
+ * It will calculate from left to right. Input should look something like this:
  *
  * XIV V M + L *
  *
  * Numerals and operators are space delimited.
  */
 const parseArithmetic = require('./src/parse-arithmetic');
-const expr = process.argv.slice(2)[0];
+const expr = process.argv.slice(2);
 
 /**
- * numberStack will hold arrays of numeric types to perform operations on.
- * operatorStack will hold strings representing the arithmetic operation to apply.
+ * This will be the parsed input to loop over and begin calculations.
  */
-let [ numberStack, operatorStack ] = parseArithmetic(expr);
+let parsedInput = parseArithmetic(expr);
