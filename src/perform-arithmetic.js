@@ -36,16 +36,15 @@ const doMath = function(num1, num2, operator) {
  * @param {array} parts
  */
 module.exports = function(parts) {
-  let result;
   let stack = [];
-  
-  parts.forEach((part) => {
+  parts.forEach((part, idx) => {
     if (!arithmeticOperators[part]) {
       stack.push(part);
     } else {
-      let operand1 = stack.pop();
       let operand2 = stack.pop();
-      stack.push(doMath(operand1, operand2, part));
+      let operand1 = stack.pop();
+      let operator = part;
+      stack.push(doMath(operand1, operand2, operator));
     }
   })
 

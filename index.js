@@ -17,4 +17,5 @@ let parsedInput = parseInput(expr.split(' '));
 
 const result = performArithmetic(parsedInput);
 
+// Write results to console.
 process.stdout.write(`${String(result)}\n`);

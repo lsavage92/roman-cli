@@ -27,8 +27,6 @@ module.exports = function(expr) {
        * If we end up with an odd part that is not a numeral, or some
        * user input error, the library should throw an error.
        */
-      
-      console.log(part);
       let num = toArabic(part.toUpperCase());
       return num;
     }
