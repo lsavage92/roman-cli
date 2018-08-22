@@ -1,6 +1,6 @@
 /**
  * This application expects a string of roman numerals in postfix notation.
- * It will calculate from left to right. Input should look something like this:
+ * Input should look something like this:
  *
  * 'XIV V M + L *'
  *
